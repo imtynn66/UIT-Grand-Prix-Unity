@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6bb35516af599416eaa02786947c41b4
+timeCreated: 1436289263
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18207
+  packageName: 2D Race Cars
+  packageVersion: 1.02
+  assetPath: Assets/race_cars_2d/src/asphalt.svg
+  uploadId: 160181

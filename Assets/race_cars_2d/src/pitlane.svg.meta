@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1511acf20930e4823be1c869287701ed
+timeCreated: 1436289262
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18207
+  packageName: 2D Race Cars
+  packageVersion: 1.02
+  assetPath: Assets/race_cars_2d/src/pitlane.svg
+  uploadId: 160181
