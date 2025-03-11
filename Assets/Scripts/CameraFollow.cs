@@ -1,3 +1,4 @@
+//CameraFollow.cs
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
