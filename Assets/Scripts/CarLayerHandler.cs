@@ -55,6 +55,7 @@ public class CarLayerHandler : MonoBehaviour
         {
             setSortingLayer("RaceTrackOverpass");
             carOutlineSpriteRenderer.enabled = false;
+
         }
         else
         {
