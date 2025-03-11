@@ -31,9 +31,9 @@ public class ParticalHandle : MonoBehaviour
         {
             if (isBraking)
             {
-                particleEmmisionRate = 30;
+                particleEmmisionRate = 60;
             }
-            else particleEmmisionRate = Mathf.Abs(lateralVelocity) * 2;
+            else particleEmmisionRate = Mathf.Abs(lateralVelocity) * 4;
         }
     }
 }

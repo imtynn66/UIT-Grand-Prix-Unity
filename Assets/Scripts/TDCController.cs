@@ -110,5 +110,9 @@ public class TDCController : MonoBehaviour
         accelerationInput = inputVector.y;
         steeringInput = inputVector.x;
     }
+    public float GetVelocityMagnitude()
+    {
+        return carRigidbody2D.linearVelocity.magnitude;
+    }
 }
 
