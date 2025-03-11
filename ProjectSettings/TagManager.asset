@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Over
   - Under
+  - OverpassTrigger
+  - UnderpassTrigger
   layers:
   - Default
   - TransparentFX
@@ -55,7 +57,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Over
+  - name: RaceTrackOverpass
     uniqueID: 1292705887
     locked: 0
   - name: Detail
