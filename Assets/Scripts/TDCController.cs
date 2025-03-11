@@ -109,11 +109,5 @@ public class TDCController : MonoBehaviour
     {
         accelerationInput = inputVector.y;
         steeringInput = inputVector.x;
-        steeringInput = steeringInput.y;
     }
-    void hello()
-    {
 
-    };
-}
-//echaobannha
