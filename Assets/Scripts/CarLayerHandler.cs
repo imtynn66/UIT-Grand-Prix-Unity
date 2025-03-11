@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-#minh 
 
 public class CarLayerHandler : MonoBehaviour
 {
