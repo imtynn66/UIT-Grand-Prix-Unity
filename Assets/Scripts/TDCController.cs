@@ -17,10 +17,11 @@ public class TDCController : MonoBehaviour
     public SpriteRenderer carShadowRenderer;
 
     Rigidbody2D carRigidbody2D;
-
+    Collider2D carCollider;
     private void Awake()
     {
         carRigidbody2D = GetComponent<Rigidbody2D>();
+        carCollider = GetComponentInChildren<Collider2D>();
     }
 
     private void FixedUpdate()
@@ -110,4 +111,9 @@ public class TDCController : MonoBehaviour
         accelerationInput = inputVector.y;
         steeringInput = inputVector.x;
     }
+    public float GetVelocityMagnitude()
+    {
+        return carRigidbody2D.linearVelocity.magnitude;
+    }
 }
+

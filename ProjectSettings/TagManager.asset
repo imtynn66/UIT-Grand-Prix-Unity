@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Over
-  - Under
+  - OverpassTrigger
+  - UnderpassTrigger
+  - OverpassCollider
+  - UnderpassCollider
   layers:
   - Default
   - TransparentFX
@@ -55,11 +57,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Over
+  - name: RaceTrackOverpass
     uniqueID: 1292705887
     locked: 0
-  - name: Detail
-    uniqueID: 1009796967
+  - name: SkidmarksOverpass
+    uniqueID: 724922097
     locked: 0
   - name: Particles
     uniqueID: 4112549653
