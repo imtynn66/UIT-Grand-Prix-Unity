@@ -44,6 +44,13 @@ public class GhostCarDataListItem : ISerializationCallbackReceiver
 	[SerializeField]: dùng để lưu trữ giá trị của biến này khi lưu trữ dữ liệu của đối tượng
 	 */
 
+	public GhostCarDataListItem(Vector2 position_, float rotation_, float timeSinceLevelLoaded_, Vector3 localScale_)
+	{
+		this.position = position_;
+		this.rotationZ = rotation_;
+		this.timeSinceLevelLoaded = timeSinceLevelLoaded_;
+		this.localScale = localScale_;
+	}
 	//covert data
 	public void OnBeforeSerialize()
 	{
