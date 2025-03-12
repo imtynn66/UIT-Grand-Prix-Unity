@@ -6,6 +6,7 @@ using UnityEngine.Maneagement;
 public class GhostCarRecorder : Monobehavior
 {
 	public Transform CarSpiteObject;
+	public GameObject ghostCarPlaybackPrefab;
 
 
 	//local variable
@@ -27,6 +28,12 @@ public class GhostCarRecorder : Monobehavior
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
+		//Create ghost car
+		GameObject ghostCar= Instantiate(ghostCarPlaybackPrefab);
+
+		//load data
+		ghostCar.GetComponent<GhostCarPlayback>().LoadData(carInputHandler.playerNumber);
+
 		StartCoroutine(RecordCarPosionCO());
 		StartCoroutine(SaveCarPosionCO());
 	}
