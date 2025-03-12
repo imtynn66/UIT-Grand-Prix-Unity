@@ -42,10 +42,6 @@ public class CarLayerHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void UpdateSortingAndCollisionLayers()
     {
@@ -85,10 +81,11 @@ public class CarLayerHandler : MonoBehaviour
         }
     }
 
-    //public bool isDrivingOnOverPass()
-    //{
-    //    return isDrivingOnOverPass;
-    //}
+    public bool IsDrivingOnOverPass()
+    {
+        return isDrivingOnOverPass;
+    }
+
     void OnTriggerEnter2D(Collider2D collider2d)
     {
         if (collider2d.CompareTag("UnderpassTrigger"))

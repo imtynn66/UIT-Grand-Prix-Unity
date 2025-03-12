@@ -6,12 +6,14 @@ public class SmokeHandler : MonoBehaviour
 
     TDCController TDCController;
     TrailRenderer trailRenderer;
-
+    public bool isOverpassEmitter = false;
+    CarLayerHandler carLayerHandler;
     private void Awake()
     {
         TDCController = GetComponentInParent<TDCController>();
         trailRenderer = GetComponent<TrailRenderer>();
         trailRenderer.emitting = false;
+        carLayerHandler = GetComponentInParent<CarLayerHandler>();
     }
 
     void Start()
@@ -24,8 +26,15 @@ public class SmokeHandler : MonoBehaviour
     {
         if (TDCController.isTireScreeching(out float lateralVelocity, out bool isBraking))
         {
-            trailRenderer.emitting = true;
+            if (carLayerHandler.IsDrivingOnOverPass() && isOverpassEmitter)
+            {
+                trailRenderer.emitting = true;
+            }
+            if (!carLayerHandler.IsDrivingOnOverPass() && !isOverpassEmitter)
+            {
+                trailRenderer.emitting = true;
+            }
         }
-        else trailRenderer.emitting = false;
+
     }
 }
