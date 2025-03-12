@@ -9,8 +9,8 @@ public class CarLayerHandler : MonoBehaviour
     //public SpriteRenderer carOutlineSpriteRenderer;
     List<SpriteRenderer> defaultLayerSpriteRenderers = new List<SpriteRenderer>();
 
-    //List<Collider2D> overpassColliderList = new List<Collider2D>();
-    //List<Collider2D> underpassColliderList = new List<Collider2D>();
+    List<Collider2D> overpassColliderList = new List<Collider2D>();
+    List<Collider2D> underpassColliderList = new List<Collider2D>();
 
     Collider2D carCollider;
 
@@ -25,16 +25,16 @@ public class CarLayerHandler : MonoBehaviour
                 defaultLayerSpriteRenderers.Add(spriteRenderer);
             }
         }
-        //foreach (GameObject overpassColliderGameObject in GameObject.FindGameObjectsWithTag("OverpassCollider"))
-        //{
-        //    overpassColliderList.Add(overpassColliderGameObject.GetComponent<Collider2D>());
+        foreach (GameObject overpassColliderGameObject in GameObject.FindGameObjectsWithTag("OverpassCollider"))
+        {
+            overpassColliderList.Add(overpassColliderGameObject.GetComponent<Collider2D>());
 
-        //}
-        //foreach (GameObject underpassColliderGameObject in GameObject.FindGameObjectsWithTag("UnderpassCollider"))
-        //{
-        //    underpassColliderList.Add(underpassColliderGameObject.GetComponent<Collider2D>());
-        //}
-        //carCollider = GetComponentsInChildren<Collider2D>();
+        }
+        foreach (GameObject underpassColliderGameObject in GameObject.FindGameObjectsWithTag("UnderpassCollider"))
+        {
+            underpassColliderList.Add(underpassColliderGameObject.GetComponent<Collider2D>());
+        }
+        carCollider = GetComponentInChildren<Collider2D>();
     }
     void Start()
     {
@@ -52,31 +52,31 @@ public class CarLayerHandler : MonoBehaviour
         if (isDrivingOnOverPass)
         {
             SetSortingLayer("RaceTrackOverpass");
-            //carOutlineSpriteRenderer.enabled = false;
+            
 
         }
         else
         {
             SetSortingLayer("Default");
 
-            //carOutlineSpriteRenderer.enabled = true;
+            
         }
-        //SetCollisionWithOverPass();
+        SetCollisionWithOverPass();
     }
 
-    //void SetCollisionWithOverPass()
-    //{
-    //    foreach (Collider2D collider2D in overpassColliderList)
-    //    {
-    //        Physics2D.IgnoreCollision(carCollider, collider2D, !isDrivingOnOverPass);
-    //    }
-    //    foreach (Collider2D collider2D in underpassColliderList)
-    //    {
-    //        if (isDrivingOnOverPass)
-    //            Physics2D.IgnoreCollision(carCollider, collider2D, true);
-    //        else Physics2D.IgnoreCollision(carCollider, collider2D, false);
-    //    }
-    //}
+    void SetCollisionWithOverPass()
+    {
+        foreach (Collider2D collider2D in overpassColliderList)
+        {
+            Physics2D.IgnoreCollision(carCollider, collider2D, !isDrivingOnOverPass);
+        }
+        foreach (Collider2D collider2D in underpassColliderList)
+        {
+            if (isDrivingOnOverPass)
+                Physics2D.IgnoreCollision(carCollider, collider2D, true);
+            else Physics2D.IgnoreCollision(carCollider, collider2D, false);
+        }
+    }
     void SetSortingLayer(string layerName)
     {
         foreach (SpriteRenderer spriteRenderer in defaultLayerSpriteRenderers)

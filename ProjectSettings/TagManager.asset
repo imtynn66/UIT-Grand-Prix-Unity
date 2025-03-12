@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Over
-  - Under
   - OverpassTrigger
   - UnderpassTrigger
+  - OverpassCollider
+  - UnderpassCollider
   layers:
   - Default
   - TransparentFX
