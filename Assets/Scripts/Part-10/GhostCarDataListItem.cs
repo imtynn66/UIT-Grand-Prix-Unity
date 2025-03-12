@@ -17,6 +17,8 @@ public class GhostCarDataListItem : ISerializationCallbackReceiver
 	[System.NonSerialized]
 	public float timeSinceLevelLoaded = 0;
 
+	[System.NonSerialized]
+	public Vector3 localScale = Vector3.one;
 
 	//posion, rotation, timeSinceLevelLoaded
 	[SerializeField]
@@ -41,5 +43,33 @@ public class GhostCarDataListItem : ISerializationCallbackReceiver
 	ISerializationCallbackReceiver: interface dùng để kiểm soát thông tin trả về từ trình quản lý tài nguyên
 	[SerializeField]: dùng để lưu trữ giá trị của biến này khi lưu trữ dữ liệu của đối tượng
 	 */
+
+	//covert data
+	public void OnBeforeSerialize()
+	{
+		t = (int)(timeSinceLevelLoaded*1000.0f);
+
+		s= (int)(localScale.x*1000.0f);
+
+		x = (int)(position.x*1000.0f);
+		y = (int)(position.y*1000.0f);
+
+		//rotation không cần chuyển về decimal 
+		r = (int)rotationZ;
+		
+	}
+	public void OnAfterDeserialize()
+	{
+		timeSinceLevelLoaded = t/1000.0f;
+		
+		position.x = x/1000.0f;
+		position.y = y/1000.0f;
+
+
+		localScale= new Vector3(s/1000.0f, s/1000.0f, s/1000.0f);
+
+		rotationZ = r;
+		
+	}
 
 }
