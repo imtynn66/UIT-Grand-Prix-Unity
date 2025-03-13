@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
@@ -48,14 +48,14 @@ public class CarLayerHandler : MonoBehaviour
         if (isDrivingOnOverPass)
         {
             SetSortingLayer("RaceTrackOverpass");
-            
 
+            SetLayer(6);
         }
         else
         {
             SetSortingLayer("Default");
 
-            
+            SetLayer(3);
         }
         SetCollisionWithOverPass();
     }
@@ -79,6 +79,11 @@ public class CarLayerHandler : MonoBehaviour
         {
             spriteRenderer.sortingLayerName = layerName;
         }
+    }
+
+    void SetLayer(int layer)
+    {
+        gameObject.layer = layer;  // Cập nhật Layer của gameObject
     }
 
     public bool IsDrivingOnOverPass()
