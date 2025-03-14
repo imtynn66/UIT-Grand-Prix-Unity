@@ -1,0 +1,14 @@
+﻿ Update LeaderboardUIHandler leaderboardUIHAndler trong public class 19.39part9(PositionHandler)
+//Get the leaderboard UI handler
+        leaderboardUIHandler = FindObjectOfType<LeaderboardUIHandler>();trong awake
+------- 
+void Start()
+    {
+        //Ask the leaderboard handler to update the list
+        leaderboardUIHandler.UpdateList(carLapCounters);
+    }
+
+//Ask the leaderboard handler to update the list
+        leaderboardUIHandler.UpdateList(carLapCounters); trong obpasscheckpoint
+t có để file cập nhật PositionHandler trong folder  part 9
+

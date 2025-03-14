@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class LeaderboardUIHandler : MonoBehaviour
+{
+    public GameObject leaderboardItemPrefab;
+
+    SetLeaderboardItemInfo[] setLEaderboardItemInfo;
+
+    void Awake()
+    {
+        VerticalLayoutGroup leaderboardLayoutGroup = GetComponentInChildren<VerticalLayoutGroup>();
+        //Get all Car lap counters in the scene
+        CarLapCounter[] carLApCounterArray = FindObjectsOfType<CarLapCounter>();
+
+        //Allocate the array
+        setLEaderboardItemInfo = new SetLeaderboardItemInfo[carLApCounterArray.Length];
+
+        //Create the leaderboard items
+        for (int i = 0; i < carLApCounterArray.Length; i++)
+        {
+            //Set the position
+            GameObject leaderboardInfoGameObject = Instantiate(leaderboardItemPrefab, leaderboardLayoutGroup.transform);
+
+            setLEaderboardItemInfo[i] = leaderboardInfoGameObject.GetComponent<SetLeaderboardItemInfo>();
+
+            setLEaderboardItemInfo[i].SetPositionText($"{i+1}.");
+        }
+    }
+
+    void Start()
+    {
+
+    }
+
+    public void UpdateList(List<CarLapCounter> lapCounters)
+    {
+        //Create the leaderboard items
+        for (int i = 0; i < lapCounters.Count; i++)
+        {
+            setLEaderboardItemInfo[i].SetDriverNameText(lapCounters[i].gameObject.name);
+        }
+    }
+
+}
