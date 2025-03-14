@@ -1,0 +1,3 @@
+﻿ carCollider.gameObject.layer = layerMask.NameToLayer("ObjectOnUnderpass");
+ở dòng cuối cùng trong hàm Awake  29.28 Part6
+Xem tiếp sẽ thấy thêm ở trong hàm OnTriggerEnter2D, t lỡ submit bản fix rồi 
