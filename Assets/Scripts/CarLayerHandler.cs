@@ -4,7 +4,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
-
 public class CarLayerHandler : MonoBehaviour
 {
     public SpriteRenderer carOutlineSpriteRenderer;
@@ -37,6 +36,9 @@ public class CarLayerHandler : MonoBehaviour
             underpassColliderList.Add(underpassColliderGameObject.GetComponent<Collider2D>());
         }
         carCollider = GetComponentsInChildren<Collider2D>();
+
+        //Default drive on underpass
+        carCollider.gameObject.layer = layerMask.NameToLayer("ObjectOnUnderpass");
     }
     void Start()
     {
@@ -55,7 +57,6 @@ public class CarLayerHandler : MonoBehaviour
         {
             setSortingLayer("RaceTrackOverpass");
             carOutlineSpriteRenderer.enabled = false;
-
         }
         else
         {
@@ -96,11 +97,14 @@ public class CarLayerHandler : MonoBehaviour
         if (collider2D.CompareTag("UnderpassTrigger"))
         {
             isDrivingOnOverPass = false;
+
+            carCollider.gameObject.layer = layerMask.NameToLayer("ObjectOnUnderpass");
             UpdateSortingAndCollisionLayers();
         }
         else if (collider2D.CompareTag("OverpassTrigger"))
         {
             isDrivingOnOverPass = true;
+            carCollider.gameObject.layer = layerMask.NameToLayer("ObjectOnUnderpass");
             UpdateSortingAndCollisionLayers();
         }
     }
