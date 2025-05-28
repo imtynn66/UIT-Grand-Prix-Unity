@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Race_progress (8 x 8)_0: 8385960807361042006
+      Race_progress (8 x 8)_1: 1875972879219571496
+      Race_progress (8 x 8)_2: 4345652205248494531
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

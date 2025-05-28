@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NPC_cars (16 x 16)_0: 4404065937443849397
+      NPC_cars (16 x 16)_1: 4272539523978563782
+      NPC_cars (16 x 16)_10: -2308700635511641190
+      NPC_cars (16 x 16)_11: 8811554666929300342
+      NPC_cars (16 x 16)_12: 4829288925364723112
+      NPC_cars (16 x 16)_13: 2955566039187484556
+      NPC_cars (16 x 16)_14: -400342467122138199
+      NPC_cars (16 x 16)_15: -3648829173224930868
+      NPC_cars (16 x 16)_2: 169220187789722131
+      NPC_cars (16 x 16)_3: 7724501815617661430
+      NPC_cars (16 x 16)_4: 5123326214715104151
+      NPC_cars (16 x 16)_5: 5116106437728816181
+      NPC_cars (16 x 16)_6: -5411705982086879757
+      NPC_cars (16 x 16)_7: 4665097546508378625
+      NPC_cars (16 x 16)_8: 2611177860236650295
+      NPC_cars (16 x 16)_9: 8011813525570416139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

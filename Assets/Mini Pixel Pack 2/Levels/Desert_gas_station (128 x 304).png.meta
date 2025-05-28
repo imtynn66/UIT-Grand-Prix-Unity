@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Desert_gas_station (128 x 304)_0: -3677296148855070140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

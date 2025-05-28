@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Highway_water_animation (16 x 16)_0: 3783302153165487915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

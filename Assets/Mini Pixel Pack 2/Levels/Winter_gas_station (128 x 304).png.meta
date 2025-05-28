@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Winter_gas_station (128 x 304)_0: 401035969579747248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Summer_gas_station (128 x 304)_0: -5615854702785585951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
