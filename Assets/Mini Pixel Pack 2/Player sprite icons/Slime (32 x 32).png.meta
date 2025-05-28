@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slime (32 x 32)_0: -7590019337967862603
+      Slime (32 x 32)_1: 5007463752523121696
+      Slime (32 x 32)_2: 2397062471766043553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

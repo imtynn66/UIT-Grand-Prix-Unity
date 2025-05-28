@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Desert_road (64 x 64)_0: -928752728497006854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

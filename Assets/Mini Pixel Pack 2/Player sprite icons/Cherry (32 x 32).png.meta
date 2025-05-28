@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cherry (32 x 32)_0: -3906368518003323265
+      Cherry (32 x 32)_1: -6319392607588676107
+      Cherry (32 x 32)_2: 1595956584485893585
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

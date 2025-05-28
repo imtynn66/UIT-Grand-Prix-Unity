@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Highway_gas_station (176 x 352)_0: -1463621765585484278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

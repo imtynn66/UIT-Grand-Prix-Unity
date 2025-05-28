@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Road_markings (16 x 16)_0: -8595960608797770297
+      Road_markings (16 x 16)_1: 7164750387982867271
+      Road_markings (16 x 16)_2: 837230684656788565
+      Road_markings (16 x 16)_3: 4392108783574991085
+      Road_markings (16 x 16)_4: -339890868735866865
+      Road_markings (16 x 16)_5: -6917977553819682043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

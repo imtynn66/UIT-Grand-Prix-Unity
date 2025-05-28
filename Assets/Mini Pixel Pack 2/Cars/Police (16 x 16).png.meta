@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Police (16 x 16)_0: 1014639682877360284
+      Police (16 x 16)_1: -7809230933965516321
+      Police (16 x 16)_2: -5637341510531959577
+      Police (16 x 16)_3: 6683341796423364094
+      Police (16 x 16)_4: 4292434460161928175
+      Police (16 x 16)_5: 1564472809105337580
+      Police (16 x 16)_6: 2547717976608844996
+      Police (16 x 16)_7: 8494889780630835034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

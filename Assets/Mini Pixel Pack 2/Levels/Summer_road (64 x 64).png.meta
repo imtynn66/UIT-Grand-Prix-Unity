@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Summer_road (64 x 64)_0: 3497905515151907538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

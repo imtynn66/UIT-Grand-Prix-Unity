@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Speed_indicator_numbers (8 x 8)_0: 294639951179315932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

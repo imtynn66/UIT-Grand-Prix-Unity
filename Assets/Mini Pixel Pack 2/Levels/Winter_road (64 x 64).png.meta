@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Winter_road (64 x 64)_0: -3520609257993720084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
