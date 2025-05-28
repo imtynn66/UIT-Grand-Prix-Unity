@@ -96,9 +96,6 @@ public class CarLapCounter : MonoBehaviour
                 OnPassCheckpoint?.Invoke(this);
 
                 //Now show the cars position as it has been calculated
-                if (isRaceCompleted)
-                    StartCoroutine(ShowPositionCO(100));
-                else StartCoroutine(ShowPositionCO(1.5f));
             }
         }
     }

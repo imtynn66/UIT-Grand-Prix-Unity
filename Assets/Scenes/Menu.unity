@@ -609,7 +609,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2129623065}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LocalGame
+        m_MethodName: OnlineGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

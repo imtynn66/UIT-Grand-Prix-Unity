@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Photon.Pun;
 
-public class TDCController : MonoBehaviour
+public class TDCController : MonoBehaviourPun
 {
     [Header("Car Settings")]
     public float accelerationFactor = 30.0f; // Tăng giá trị này để tăng tốc độ
@@ -26,8 +27,10 @@ public class TDCController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!photonView.IsMine || !CountdownManager.raceStarted) return; // Chỉ xử lý input cho xe của player này
+        
         ApplyEngineForce();
-        ApplySteering();
+        ApplySteering();    
         KillOrthogonalVelocity();
     }
 
