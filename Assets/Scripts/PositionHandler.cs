@@ -28,7 +28,6 @@ public class PositionHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Ask the leaderboard handler to update the list
         leaderboardUIHandler.UpdateList(carLapCounters);
     }
 
