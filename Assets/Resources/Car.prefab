@@ -5142,6 +5142,7 @@ GameObject:
   - component: {fileID: 3840764567772826915}
   - component: {fileID: 6188798096558292489}
   - component: {fileID: 165807952797805395}
+  - component: {fileID: 3572022464204579689}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -5438,6 +5439,24 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3572022464204579689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147631717522521863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18964e07553aec449c418dbd3a4d3e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalCheckpoints: 14
+  totalLaps: 2
+  currentCheckpoint: 0
+  currentLap: 0
+  endRacePanel: {fileID: 0}
+  lapText: {fileID: 0}
 --- !u!1 &3713134552014009269
 GameObject:
   m_ObjectHideFlags: 0
