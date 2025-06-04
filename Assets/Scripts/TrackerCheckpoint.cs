@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using TMPro; // Dùng TextMeshPro
+using TMPro;
+using Photon.Pun;
 
-public class PlayerCheckpointTracker : MonoBehaviour
+public class PlayerCheckpointTracker : MonoBehaviourPun, IPunObservable
 {
     public int totalCheckpoints = 14;
     public int totalLaps = 3;
@@ -10,11 +11,21 @@ public class PlayerCheckpointTracker : MonoBehaviour
     public int currentLap = 0;
 
     public GameObject endRacePanel;
-    public TextMeshProUGUI lapText; // Hiển thị số vòng
+    public TextMeshProUGUI lapText;
+    public TextMeshProUGUI winnerText; // Kéo thả component này trong Inspector
+
+    private bool raceFinished = false;
 
     private void Start()
     {
-        // Tự động tìm endRacePanel nếu chưa kéo tay
+        if (!photonView.IsMine) return;
+
+        SetupUI();
+        UpdateLapText();
+    }
+
+    private void SetupUI()
+    {
         if (endRacePanel == null)
         {
             GameObject canvas = GameObject.Find("ingame-Canvas");
@@ -26,33 +37,35 @@ public class PlayerCheckpointTracker : MonoBehaviour
                     endRacePanel = panelTransform.gameObject;
                     endRacePanel.SetActive(false);
                 }
-                else
-                {
-                    Debug.LogError("Không tìm thấy EndRacePanel trong Canvas.");
-                }
 
-                // Tự động tìm lapText nếu chưa kéo tay
                 Transform lapTextTransform = canvas.transform.Find("LapText");
                 if (lapTextTransform != null)
                 {
                     lapText = lapTextTransform.GetComponent<TextMeshProUGUI>();
                 }
-                else
+
+                // Tìm winnerText trong EndRacePanel thay vì Canvas root
+                if (endRacePanel != null)
                 {
-                    Debug.LogWarning("Không tìm thấy LapText trong Canvas.");
+                    Transform winnerTextTransform = endRacePanel.transform.Find("WinnerText");
+                    if (winnerTextTransform != null)
+                    {
+                        winnerText = winnerTextTransform.GetComponent<TextMeshProUGUI>();
+                        Debug.Log("Found WinnerText component: " + winnerText.name);
+                    }
+                    else
+                    {
+                        Debug.LogError("WinnerText not found in EndRacePanel!");
+                    }
                 }
             }
-            else
-            {
-                Debug.LogError("Không tìm thấy ingame-Canvas.");
-            }
         }
-
-        UpdateLapText(); // Hiển thị lap ban đầu
     }
 
-    private void OnTriggerEnter2D (Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!photonView.IsMine) return;
+
         CheckPoint checkpoint = other.GetComponent<CheckPoint>();
         if (checkpoint != null)
         {
@@ -70,13 +83,24 @@ public class PlayerCheckpointTracker : MonoBehaviour
                     Debug.Log("Lap Completed: " + currentLap);
                     UpdateLapText();
 
-                    if (currentLap >= totalLaps)
+                    if (currentLap >= totalLaps && !raceFinished)
                     {
-                        EndRace();
+                        raceFinished = true;
+                        string playerName = PhotonNetwork.LocalPlayer.NickName;
+
+                        Debug.Log("Sending RPC with winner: " + playerName);
+                        photonView.RPC("PlayerWins", RpcTarget.All, playerName);
                     }
                 }
             }
         }
+    }
+
+    [PunRPC]
+    void PlayerWins(string playerName)
+    {
+        Debug.Log("RPC PlayerWins received: " + playerName);
+        EndRace(playerName);
     }
 
     void UpdateLapText()
@@ -87,13 +111,39 @@ public class PlayerCheckpointTracker : MonoBehaviour
         }
     }
 
-    void EndRace()
+    void EndRace(string winnerName)
     {
         if (endRacePanel != null)
         {
             endRacePanel.SetActive(true);
+
+            // Cập nhật text winner
+            if (winnerText != null)
+            {
+                winnerText.text = "WINNER: " + winnerName;
+                Debug.Log("Updated winner text to: " + winnerText.text);
+            }
+            else
+            {
+                Debug.LogError("winnerText is null!");
+            }
+
             Time.timeScale = 0f;
-            Debug.Log("Race Finished!");
+            Debug.Log("Race Finished! Winner: " + winnerName);
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(currentCheckpoint);
+            stream.SendNext(currentLap);
+        }
+        else
+        {
+            currentCheckpoint = (int)stream.ReceiveNext();
+            currentLap = (int)stream.ReceiveNext();
         }
     }
 }

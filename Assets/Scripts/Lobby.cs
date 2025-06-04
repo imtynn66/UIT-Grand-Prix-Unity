@@ -7,37 +7,54 @@ using UnityEngine.UI;
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public InputField roomNameInput;
+    public InputField playerNameInput; // ✅ Input tên người chơi
     public Text statusText;
 
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
-        statusText.text = "Conecting to Photon";
+        statusText.text = "Connecting to Photon...";
     }
 
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
-        statusText.text = "Conected!";
+        statusText.text = "Connected!";
     }
 
     public void CreateRoom()
     {
         string roomName = roomNameInput.text;
-        if (!string.IsNullOrEmpty(roomName))
+        string playerName = playerNameInput.text;
+
+        if (!string.IsNullOrEmpty(roomName) && !string.IsNullOrEmpty(playerName))
         {
-            PhotonNetwork.CreateRoom(roomName, new RoomOptions { MaxPlayers = 2 });
+            PhotonNetwork.NickName = playerName;
+            RoomOptions options = new RoomOptions();
+            options.MaxPlayers = 4; 
+            PhotonNetwork.CreateRoom(roomName, options);
             statusText.text = $"Creating Room...";
+        }
+        else
+        {
+            statusText.text = "Enter Room Name and Player Name!";
         }
     }
 
     public void JoinRoom()
     {
         string roomName = roomNameInput.text;
-        if (!string.IsNullOrEmpty(roomName))
+        string playerName = playerNameInput.text;
+
+        if (!string.IsNullOrEmpty(roomName) && !string.IsNullOrEmpty(playerName))
         {
+            PhotonNetwork.NickName = playerName;
             PhotonNetwork.JoinRoom(roomName);
             statusText.text = $"Joining Room...";
+        }
+        else
+        {
+            statusText.text = "Enter Room Name and Player Name!";
         }
     }
 
@@ -49,7 +66,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         statusText.text = "Joined!";
-        PhotonNetwork.LoadLevel("Online"); // Chuyển sang scene đua xe
+        PhotonNetwork.LoadLevel("Waiting"); 
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
@@ -59,6 +76,6 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
-        statusText.text = "Failed!" + message;
+        statusText.text = "Create Failed: " + message;
     }
 }

@@ -5380,6 +5380,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6188798096558292489}
   - {fileID: 165807952797805395}
+  - {fileID: 3572022464204579689}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -5404,6 +5405,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6188798096558292489}
   - {fileID: 165807952797805395}
+  - {fileID: 3572022464204579689}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -5457,6 +5459,7 @@ MonoBehaviour:
   currentLap: 0
   endRacePanel: {fileID: 0}
   lapText: {fileID: 0}
+  winnerText: {fileID: 0}
 --- !u!1 &3713134552014009269
 GameObject:
   m_ObjectHideFlags: 0
