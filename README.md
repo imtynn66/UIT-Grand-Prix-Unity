@@ -41,9 +41,9 @@ git clone https://github.com/your-username/UIT-Grand-Prix-Unity.git
    - Space: Handbrake
 
 ## 👥 Thành viên nhóm
-- [Thành viên 1] - [Role]
-- [Thành viên 2] - [Role]
-- [Thành viên 3] - [Role]
+- Trần Gia Bảo   - 23520139
+- Châu Hoàng Phúc - 23521191
+- Nguyễn Minh Quân - 23520087
 
 ## 🌟 Tính năng nổi bật
 ### Networking
@@ -68,13 +68,8 @@ git clone https://github.com/your-username/UIT-Grand-Prix-Unity.git
 - [ ] Cải thiện physics
 - [ ] Cross-platform support
 
-## 📄 License
-[Specify your license here]
-
 ## 🙏 Acknowledgments
 - Cảm ơn thầy/cô đã hướng dẫn
 - Cảm ơn Photon Engine cho networking solution
 - Cảm ơn Unity Technologies
 
----
-*Made with ❤️ by [Your Team Name]*
