@@ -75,3 +75,11 @@ crashlytics-build.properties
 
 Library/
 PackageCache/
+/Assets/Firebase
+/Assets/Editor Default Resources/Firebase
+*.meta
+/Assets/ExternalDependencyManager/Editor/1.2.186
+/Assets/ExternalDependencyManager/Editor
+/Assets/google-services.json
+/Assets/Plugins/iOS/Firebase
+/Assets/Plugins/tvOS/Firebase
