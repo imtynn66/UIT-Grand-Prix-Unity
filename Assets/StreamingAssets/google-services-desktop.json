@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "516145546347",
+    "project_id": "uit-grand-prix",
+    "storage_bucket": "uit-grand-prix.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516145546347:android:2837f349653f3df89d9d2e",
+        "android_client_info": {
+          "package_name": "com.imtynn66.uitgrandprix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMBcYxUpTBxyXRQ96rE9_g57JarGVn324"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

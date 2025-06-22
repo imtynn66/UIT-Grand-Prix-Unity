@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
-public class RaceUIController : MonoBehaviour
+public class RaceUIController : MonoBehaviourPun
 {
     public GameObject endRacePanel;
 
+    [PunRPC]
     public void ShowEndPanel()
     {
         endRacePanel.SetActive(true);
@@ -13,6 +15,13 @@ public class RaceUIController : MonoBehaviour
 
     public void QuitGame()
     {
+        PhotonNetwork.Disconnect();
         SceneManager.LoadScene("Lobby");
+    }
+
+    // Gọi hàm này khi 1 người thắng
+    public void TriggerEndGame()
+    {
+        photonView.RPC("ShowEndPanel", RpcTarget.All);
     }
 }

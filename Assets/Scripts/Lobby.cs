@@ -7,19 +7,21 @@ using UnityEngine.UI;
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public InputField roomNameInput;
-    public InputField playerNameInput; // ✅ Input tên người chơi
+    public InputField playerNameInput; 
     public Text statusText;
 
     void Start()
     {
+        PhotonNetwork.GameVersion = "1.0";
         PhotonNetwork.ConnectUsingSettings();
         statusText.text = "Connecting to Photon...";
     }
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinLobby();
+        Debug.Log("Connected to Photon. Region: " + PhotonNetwork.CloudRegion);
         statusText.text = "Connected!";
+        PhotonNetwork.JoinLobby();
     }
 
     public void CreateRoom()
@@ -60,6 +62,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void Return()
     {
+        PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Menu");
     }
 
@@ -72,6 +75,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         statusText.text = "Can't Join: " + message;
+        Debug.LogError("Join Room Failed: " + message);
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)

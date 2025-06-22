@@ -2666,6 +2666,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 344491549365076114, guid: 3b284fb911d56414f82dd7adfa615772, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1925131196627545475, guid: 3b284fb911d56414f82dd7adfa615772, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.413
@@ -2709,6 +2713,10 @@ PrefabInstance:
     - target: {fileID: 3147631717522521863, guid: 3b284fb911d56414f82dd7adfa615772, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840764567772826915, guid: 3b284fb911d56414f82dd7adfa615772, type: 3}
+      propertyPath: sceneViewId
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3897943278688623466, guid: 3b284fb911d56414f82dd7adfa615772, type: 3}
       propertyPath: carPositionText
